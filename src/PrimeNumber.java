@@ -5,12 +5,15 @@ public class PrimeNumber {
         Scanner scanner = new Scanner(System.in);
         int number = scanner.nextInt();
         int count = 0;
-        for(int i=2; i< number; i=i+1){  // -2 loop
-            if(number % i == 0){
-                count = count +1;
+        if(number<2) {
+            count = 999;
+        }else {
+            for(int i=2; i< number; i=i+1){  // -2 loop
+                if(number % i == 0) {
+                    count = count + 1;
+                }
             }
         }
-        //if(count == 2)
         if(count == 0)
             System.out.println(number + " is a prime number~");
         else
