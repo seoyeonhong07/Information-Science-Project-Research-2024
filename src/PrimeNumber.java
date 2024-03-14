@@ -5,13 +5,16 @@ public class PrimeNumber {
         Scanner scanner = new Scanner(System.in);
         int number = scanner.nextInt();
         int count = 0;
+
         if(number<2) {
-            count = 999;
+            count = 999;  //0, 1 etc
         }else {
-            for(int i=2; i< number; i=i+1){  // -2 loop
-                if(number % i == 0) {
+            for (int i = 2; i < number; i = i + 1) {  // -2 loop
+                if (number % i == 0) {
                     count = count + 1;
+                    break; // Performance is improved by escaping from the for loop when the first divisor is found.
                 }
+                System.out.print(i + " ");
             }
         }
         if(count == 0)
