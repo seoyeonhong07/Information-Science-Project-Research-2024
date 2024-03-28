@@ -4,7 +4,7 @@ public class Pikachu extends Pokemon {
     public Pikachu() {
     }
 
-    public Pikachu(String name, int hp){
+    public Pikachu(String name, int hp) {
         super(name, hp);
     }
 
@@ -16,12 +16,11 @@ public class Pikachu extends Pokemon {
 
     @Override
     public void attack() {
-        System.out.println("Wide area lightning attack ~");
+        System.out.println("Wide area lightning attack~");
     }
 
     @Override
     public void attack(Pokemon targetPokemon) {
         System.out.println(this.getName() + " makes a lightning attack at " + targetPokemon.getName() + ".");
-
     }
 }
