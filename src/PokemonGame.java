@@ -4,6 +4,9 @@ import Pokemons.Squirtle;
 
 public class PokemonGame {
     public static void main(String[] args) {
+//        Pokemon p1 = new Pokemon();
+//        p1.info();
+
         Squirtle s2 = new Squirtle("Squittle", 70);
         Pikachu pika1 = new Pikachu("Pikachu", 50);
         pika1.info();
@@ -20,7 +23,6 @@ public class PokemonGame {
 
 
 //        Pokemon p2 = new Pokemon("Squirtle", 70);
-//
 //        Pokemon p1 = new Pokemon();
 //        System.out.println(p1.getName() + "'s health is " + p1.getHp() + ".");
 //        p1.setHp(50);
