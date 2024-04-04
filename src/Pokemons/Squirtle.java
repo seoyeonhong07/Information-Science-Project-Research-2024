@@ -1,12 +1,15 @@
 package Pokemons;
 
-public class Squirtle extends Pokemon {
+public class Squirtle extends Pokemon{
     public Squirtle() {
         System.out.println("Crrrrrrrr~");
     }
 
-    public Squirtle(String name, int hp){
+    public Squirtle(String name, int hp) {
         super(name, hp);
+        super.setFlyable(new Nofly());
+        this.attackPoint = 15;
+        System.out.println("Crrrrrrrr~");
     }
 
     @Override
@@ -22,7 +25,8 @@ public class Squirtle extends Pokemon {
 
     @Override
     public void attack(Pokemon targetPokemon) {  // LSP
+        targetPokemon.setHp(targetPokemon.getHp() - this.attackPoint);
         System.out.println(this.getName() + " attacks " + targetPokemon.getName() + " with a water cannon.");
-
+        System.out.println("The Hp of the wild Pokemon" + targetPokemon.getName() + "was reduced to " + targetPokemon.getHp() + " due to " + this.getName() + "'s attack.");
     }
 }
