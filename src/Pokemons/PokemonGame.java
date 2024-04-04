@@ -1,6 +1,5 @@
-import Pokemons.*;
+package Pokemons;
 
-import java.sql.SQLOutput;
 import java.util.Random;
 import java.util.Scanner;
 
@@ -42,8 +41,10 @@ public class PokemonGame {
                 System.out.println("Exit the program...");
                 break;
             } else if (menu == 1) {
-                playerPokemon.attack(wildPokemon);
-                wildPokemon.attack(playerPokemon);
+                System.out.print("\t1) " + playerPokemon.skills[0] + "  2) " + playerPokemon.skills[1] + "  3) " + playerPokemon.skills[2] + "  : ");
+                int skill = scanner.nextInt() -1;
+                playerPokemon.attack(wildPokemon, skill);
+                //wildPokemon.attack(playerPokemon);
             } else if (menu == 2) {
                 System.out.println("The Player Pokemon runs away.");
             }

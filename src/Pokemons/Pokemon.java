@@ -7,8 +7,8 @@ public abstract class Pokemon{
     private int hp;
     protected int attackPoint;
 
-    protected String[] skills;
-    protected int[] skillPoints;
+    protected String[] skills = null;
+    protected Integer[] skillPoints;
 
     Flyable flyable;  // has-a
 
@@ -55,7 +55,7 @@ public abstract class Pokemon{
     }
 
     public abstract void attack();
-    public abstract void attack(Pokemon targetPokemon);
+    public abstract void attack(Pokemon targetPokemon, int skill);
 
     //public abstract void fly();
 }
