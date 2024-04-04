@@ -3,6 +3,6 @@ package Pokemons;
 public class Rocket implements Flyable{
     @Override
     public void fly() {
-        System.out.println("The Pokémon flies through the sky with a rocket mounted on its back.");
+        System.out.println(" flies through the sky with a rocket mounted on its back.");
     }
 }
