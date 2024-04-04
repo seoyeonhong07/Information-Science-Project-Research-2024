@@ -1,9 +1,14 @@
 package Pokemons;
 
+import java.security.ProtectionDomain;
+
 public abstract class Pokemon{
     private String name;
     private int hp;
     protected int attackPoint;
+
+    protected String[] skills;
+    protected int[] skillPoints;
 
     Flyable flyable;  // has-a
 

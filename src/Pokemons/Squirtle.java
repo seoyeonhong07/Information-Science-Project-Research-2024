@@ -1,14 +1,18 @@
 package Pokemons;
 
 public class Squirtle extends Pokemon{
-    public Squirtle() {
-        System.out.println("Crrrrrrrr~");
-    }
+    public Squirtle() { System.out.println("Crrrrrrrr~"); }
 
     public Squirtle(String name, int hp) {
         super(name, hp);
         super.setFlyable(new Nofly());
-        this.attackPoint = 15;
+        this.attackPoint = 12;
+        this.skills[0] = "body slam";
+        this.skills[1] = "water canon";
+        this.skills[2] = "hydro pump";
+        this.skillPoints[0] = 35;
+        this.skillPoints[1] = 40;
+        this.skillPoints[2] = 110;
         System.out.println("Crrrrrrrr~");
     }
 
