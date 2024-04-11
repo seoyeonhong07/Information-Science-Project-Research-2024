@@ -1,12 +1,24 @@
 package Pokemons;
 
+import java.util.ArrayList;
+
 public class Charizard extends Pokemon {
     public Charizard(String name, int hp) {
         super(name, hp);
         super.setFlyable(new Wings());
         this.attackPoint = 25;
-        this.skills = new String[]{"claw", "dragon's breath", "flare drive"};
-        this.skillPoints = new Integer[]{40, 60, 120};
+//        this.skills = new String[]{"claw", "dragon's breath", "flare drive"};
+//        this.skillPoints = new Integer[]{40, 60, 120};
+        this.skills = new ArrayList<>();
+        this.skills.add("claw");
+        this.skills.add("dragon's breath");
+        this.skills.add("flare drive");
+
+        this.skillPoints = new ArrayList<>();
+        this.skillPoints.add(40);
+        this.skillPoints.add(60);
+        this.skillPoints.add(120);
+
         System.out.println("Riza~~");
     }
 
