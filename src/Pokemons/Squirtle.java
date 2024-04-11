@@ -1,6 +1,7 @@
 package Pokemons;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 
 public class Squirtle extends Pokemon{
     public Squirtle() { System.out.println("Crrrrrrrr~"); }
@@ -9,17 +10,8 @@ public class Squirtle extends Pokemon{
         super(name, hp);
         super.setFlyable(new Nofly());
         this.attackPoint = 12;
-//        this.skills = new String[]{"body slam", "water canon", "hydro pump"};
-//        this.skillPoints = new Integer[]{35, 40, 110};
-        this.skills = new ArrayList<>();
-        this.skills.add("body slam");
-        this.skills.add("water canon");
-        this.skills.add("hydro pump");
-
-        this.skillPoints = new ArrayList<>();
-        this.skillPoints.add(35);
-        this.skillPoints.add(40);
-        this.skillPoints.add(110);
+        this.skills = new ArrayList<>(Arrays.asList("body slam", "water canon", "hydro pump"));
+        this.skillPoints = new ArrayList<>(Arrays.asList(35, 40, 110));
 
         System.out.println("Crrrrrrrr~");
     }
@@ -39,6 +31,6 @@ public class Squirtle extends Pokemon{
     public void attack(Pokemon targetPokemon, int s) {  // LSP
         targetPokemon.setHp(targetPokemon.getHp() - (this.attackPoint + this.skillPoints.get(s)));
         System.out.println(this.getName() + " attacks " + targetPokemon.getName() + " with a " + this.skills.get(s) + ".");
-        System.out.println("The Hp of the wild Pokemon " + targetPokemon.getName() + "was reduced to " + targetPokemon.getHp() + " due to " + this.getName() + "'s attack.");
+        System.out.println("The Hp of the Pokemon " + targetPokemon.getName() + "was reduced to " + targetPokemon.getHp() + " due to " + this.getName() + "'s attack.");
     }
 }

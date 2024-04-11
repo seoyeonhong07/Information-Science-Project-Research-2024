@@ -4,15 +4,31 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class PokemonGame {
-    public static void main(String[] args) {
+    static Pokemon wildPokemon;
+    public static void produceEnemyPokemon(){
         Random random = new Random();
-        random.setSeed(32);
+//        random.setSeed(32);
+
+        System.out.println("A wild Pokemon has appeared.");
+        int select = random.nextInt(3);
+        if(select == 0)
+            wildPokemon = new Pikachu("Pikachu", 50);
+        else if (select == 1)
+            wildPokemon = new Squirtle("Squirtle", 55);
+        else if (select == 2)
+            wildPokemon= new Charizard("Charizard", 74);
+        else
+            wildPokemon = new Pikachu("Pikachu", 50);
+    }
+    public static void main(String[] args) {
+//        Random random = new Random();
+//        random.setSeed(32);
 
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Choose your pokemonster. 1) Pikachu(default)  2) Squirtle  3)Charizard : ");
+        System.out.print("Choose your pokemonster. 1) Pikachu(default)  2) Squirtle  3)Charizard : ");
         int select = scanner.nextInt();
 
-        Pokemon playerPokemon, wildPokemon;
+        Pokemon playerPokemon;
         if(select == 1)
             playerPokemon = new Pikachu("Pikachu", 50);
         else if (select == 2)
@@ -22,17 +38,8 @@ public class PokemonGame {
         else
             playerPokemon = new Pikachu("Pikachu", 50);   // default
 
-        System.out.println("A wild Pokemon has appeared.");
-        select = random.nextInt(3);
-        if(select == 0)
-            wildPokemon = new Pikachu("Pikachu", 50);
-        else if (select == 1)
-            wildPokemon = new Squirtle("Squirtle", 55);
-        else if (select == 2)
-            wildPokemon= new Charizard("Charizard", 74);
-        else
-            wildPokemon = new Pikachu("Pikachu", 50);
-
+        //      Enemy Pokemon
+        produceEnemyPokemon();
 
         while(true){
             System.out.print("1) Battle  2) Run away  3) quit : ");
@@ -45,9 +52,11 @@ public class PokemonGame {
                 System.out.print("\t1) " + playerPokemon.skills.get(0)+ "  2) " + playerPokemon.skills.get(1) + "  3) " + playerPokemon.skills.get(2) + "  : ");
                 int skill = scanner.nextInt() -1;
                 playerPokemon.attack(wildPokemon, skill);
-                //wildPokemon.attack(playerPokemon);
+                System.out.println("=====================");
+                wildPokemon.attack(playerPokemon, skill);
             } else if (menu == 2) {
-                System.out.println("The Player Pokemon runs away.");
+                System.out.println("The player's Pokemon runs away.");
+                produceEnemyPokemon();
             }
         }
     }
